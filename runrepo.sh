@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
-cd ~
-sudo dnf install git -y
+
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+sudo dnf install epel-release -y
+sudo dnf --refresh update -y
+
 sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets
-#cp /secrets/git-credentials ~/.git-credentials
+
+sudo dnf install git -y
 git config --global credential.helper 'store --file /secrets/git-credentials'
+
+cd ~
 git clone https://github.com/gaurushab/$1.git
 cd $1
 chmod +x *.sh
