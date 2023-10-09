@@ -2,6 +2,8 @@
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+sudo dnf install dnf-plugins-core -y
+sudo dnf config-manager --set-enabled crb
 sudo dnf install epel-release -y
 sudo dnf --refresh update -y
 
