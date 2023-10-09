@@ -2,6 +2,7 @@
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+sudo dnf install openssh -y
 sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
