@@ -2,12 +2,12 @@
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo dnf install openssh -y
-sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
-sudo systemctl restart sshd
-
 sudo dnf install epel-release -y
 sudo dnf --refresh update -y
+
+sudo dnf install openssh openssh-server openssh-clients -y
+sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
+sudo systemctl restart sshd
 
 sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets
