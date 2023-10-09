@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+
+sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+
 sudo dnf install epel-release -y
 sudo dnf --refresh update -y
 
