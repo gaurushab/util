@@ -11,11 +11,11 @@ sudo dnf install openssh openssh-server openssh-clients -y
 sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
-sudo mkdir /secrets
-sudo mount /dev/sdb1 /secrets
+sudo mkdir /usbdrive
+sudo mount /dev/sdb1 /usbdrive
 
 sudo dnf install git -y
-git config --global credential.helper 'store --file /secrets/git-credentials'
+git config --global credential.helper 'store --file /usbdrive/secrets/git-credentials'
 
 cd ~
 git clone https://github.com/gaurushab/$1.git
