@@ -12,7 +12,7 @@ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/ssh
 sudo systemctl restart sshd
 
 sudo mkdir /secrets
-sudo mount /dev/sdb1 /secrets
+sudo mount /dev/sdb1 /secrets -o umask=0000
 
 sudo dnf install git -y
 git config --global credential.helper 'store --file /secrets/git-credentials'
