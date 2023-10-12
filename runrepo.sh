@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+reponame=$1
+runcommand=$2
+
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 sudo dnf install dnf-plugins-core -y
@@ -18,7 +21,7 @@ sudo dnf install git -y
 git config --global credential.helper 'store --file /secrets/git-credentials'
 
 cd ~
-git clone https://github.com/gaurushab/$1.git
-cd $1
+git clone https://github.com/gaurushab/$reponame.git
+cd $reponame
 chmod +x *.sh
-bash main.sh
+$runcommand
