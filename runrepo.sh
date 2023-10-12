@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 reponame=$1
-runcommand=$2
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
@@ -24,4 +23,4 @@ cd ~
 git clone https://github.com/gaurushab/$reponame.git
 cd $reponame
 chmod +x *.sh
-$runcommand
+bash main.sh
