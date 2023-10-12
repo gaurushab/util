@@ -4,6 +4,10 @@ reponame=$1
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+#disable SELINUX
+sudo setenforce 0
+sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+
 sudo dnf install dnf-plugins-core -y
 sudo dnf config-manager --enable crb
 sudo dnf install epel-release -y
