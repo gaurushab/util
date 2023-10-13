@@ -24,8 +24,10 @@ sudo dnf install git -y
 git config --global credential.helper 'store --file /secrets/git-credentials'
 
 cd ~
+echo "Cloning repo."
 git clone https://github.com/gaurushab/$reponame.git
 cd $reponame
 chmod +x *.sh
-bash main.sh > $reponame.log
-echo "done! Written output to $reponame.log"
+echo "Running repo. Writing output to ~/$reponame.log"
+bash main.sh > ~/$reponame.log
+echo "Done! Written output to ~/$reponame.log"
