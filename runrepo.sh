@@ -27,4 +27,4 @@ cd ~
 git clone https://github.com/gaurushab/$reponame.git
 cd $reponame
 chmod +x *.sh
-bash main.sh
+bash main.sh > $reponame.log
