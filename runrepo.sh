@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-reponame=$1
+export REPONAME=$1
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
@@ -25,9 +25,9 @@ git config --global credential.helper 'store --file /secrets/git-credentials'
 
 cd ~
 echo "Cloning repo."
-git clone https://github.com/gaurushab/$reponame.git
-cd $reponame
+git clone https://github.com/gaurushab/$REPONAME.git
+cd $REPONAME
 chmod +x *.sh
-echo "Running repo. Writing output to ~/$reponame.log"
-bash main.sh > ~/$reponame.log
-echo "Done! Written output to ~/$reponame.log"
+echo "Running repo. Writing output to ~/$REPONAME.log"
+bash main.sh > ~/$REPONAME.log
+echo "Done! Written output to ~/$REPONAME.log"
