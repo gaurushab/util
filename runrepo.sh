@@ -28,6 +28,6 @@ echo "Cloning repo."
 git clone https://github.com/gaurushab/$REPONAME.git
 cd $REPONAME
 chmod +x *.sh
-echo "Running repo. Writing output to ~/$REPONAME.log"
-bash main.sh > ~/$REPONAME.log
-echo "Done! Written output to ~/$REPONAME.log"
+echo "Running repo. Writing output to ~/installation.log"
+bash main.sh > ~/installation.log
+echo "Done! Written output to ~/installation.log"
