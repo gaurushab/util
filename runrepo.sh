@@ -5,8 +5,6 @@ export REPONAME=$1
 wget https://raw.githubusercontent.com/gaurushab/util/main/sysinit.sh
 bash sysinit.sh > sysinit.log
 
-git config --global credential.helper 'store --file /secrets/github'
-
 cd ~
 git clone https://github.com/gaurushab/$REPONAME.git
 cd $REPONAME
