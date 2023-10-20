@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# usage:
+# wget https://raw.githubusercontent.com/gaurushab/util/main/sysinit.sh
+# bash sysinit.sh > ~/sysinit.log
+
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 #disable SELINUX
