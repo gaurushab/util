@@ -31,4 +31,4 @@ echo "starting repo execution at "$(date)
 bash main.sh > installation.log
 echo "completed repo execution at "$(date)
 
-sudo umount -l /dev/sdb1
+# sudo umount -l /dev/sdb1
