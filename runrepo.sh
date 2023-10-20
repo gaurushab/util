@@ -3,7 +3,7 @@
 export REPONAME=$1
 
 wget https://raw.githubusercontent.com/gaurushab/util/main/sysinit.sh
-bash sysinit.sh > ~/sysinit.log
+bash sysinit.sh > sysinit.log
 
 git config --global credential.helper 'store --file /secrets/github'
 
