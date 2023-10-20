@@ -19,11 +19,9 @@ sudo systemctl restart sshd
 
 sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets -o umask=0000
-mkdir ~/secrets
 
 sudo dnf install git -y
-cp /secrets/github ~/secrets
-git config --global credential.helper 'store --file ~/secrets/github'
+git config --global credential.helper 'store --file /secrets/github'
 
 cd ~
 git clone https://github.com/gaurushab/$REPONAME.git
