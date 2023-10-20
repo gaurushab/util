@@ -19,15 +19,18 @@ sudo systemctl restart sshd
 
 sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets -o umask=0000
+mkdir ~/secrets
 
 sudo dnf install git -y
-git config --global credential.helper 'store --file /secrets/git-credentials'
+cp /secrets/github ~/secrets
+git config --global credential.helper 'store --file ~/secrets/github'
 
 cd ~
-echo "Cloning repo."
 git clone https://github.com/gaurushab/$REPONAME.git
 cd $REPONAME
 chmod +x *.sh
 echo "Running repo. Writing output to ~/installation.log"
 bash main.sh > ~/installation.log
 echo "Done! Written output to ~/installation.log"
+
+sudo umount -l /dev/sdb1
