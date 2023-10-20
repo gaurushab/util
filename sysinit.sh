@@ -23,3 +23,4 @@ sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets -o umask=0000
 
 sudo dnf install git -y
+git config --global credential.helper 'store --file /secrets/github'
