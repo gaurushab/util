@@ -27,8 +27,8 @@ cd ~
 git clone https://github.com/gaurushab/$REPONAME.git
 cd $REPONAME
 chmod +x *.sh
-echo "Running repo. Writing output to ~/installation.log"
+echo "starting repo execution at "$(date)
 bash main.sh > ~/installation.log
-echo "Done! Written output to ~/installation.log"
+echo "completed repo execution at "$(date)
 
 sudo umount -l /dev/sdb1
