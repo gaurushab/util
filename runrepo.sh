@@ -3,7 +3,7 @@
 export REPONAME=$1
 
 wget https://raw.githubusercontent.com/gaurushab/util/main/sysinit.sh
-bash sysinit.sh > sysinit.log
+bash sysinit.sh
 
 sudo mkdir /secrets
 sudo mount /dev/sdb1 /secrets -o umask=0000
