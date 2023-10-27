@@ -7,6 +7,7 @@
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 HOSTIP=$(hostname -I | cut -f1 -d' ')
+echo 'export HOSTIP='$HOSTIP >> ~/.bashrc
 
 #disable SELINUX
 sudo setenforce 0
