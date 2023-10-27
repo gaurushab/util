@@ -21,9 +21,3 @@ sudo dnf install dnf-plugins-core -y
 sudo dnf config-manager --enable crb
 sudo dnf install epel-release -y
 sudo dnf --refresh update -y
-
-sudo mkdir /secrets
-sudo mount /dev/sdb1 /secrets -o umask=0000
-
-sudo dnf install git -y
-git config --global credential.helper 'store --file /secrets/github'
