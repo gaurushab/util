@@ -6,6 +6,8 @@
 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+HOSTIP=$(hostname -I | cut -f1 -d' ')
+
 #disable SELINUX
 sudo setenforce 0
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
